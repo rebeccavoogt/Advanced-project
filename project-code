@@ -1,1 +1,26 @@
-print("This is a test")
+'''
+This is my file for the Advanced Project in the MScBMI Advanced Concepts in Computer Programming class.
+It was created in PyCharm using Python 3.7 and version control was managed using GitHub.
+'''
+
+import matplotlib
+import csv
+import bokeh
+
+test = 1 + 1
+print(f"Test value is {test}.")
+
+'''
+
+'''
+Sources
+https://www.google.com/search?q=delete+github+repository&rlz=1C1CHBF_enUS822US822&oq=delete+githu&aqs=chrome.0.0j69i57j0l6.2912j0j1&sourceid=chrome&ie=UTF-8
+https://www.google.com/search?q=markdown+language&rlz=1C1CHBF_enUS822US822&oq=markdown+langu&aqs=chrome.0.0j69i57j0l6.2144j0j1&sourceid=chrome&ie=UTF-8
+https://www.jetbrains.com/help/pycharm/commit-and-push-changes.html
+https://www.jetbrains.com/help/pycharm/set-up-a-git-repository.html
+https://git-scm.com/download/win
+https://www.jetbrains.com/help/pycharm/github.html
+
+
+
+'''
