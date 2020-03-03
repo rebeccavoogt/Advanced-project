@@ -7,8 +7,9 @@ import matplotlib
 import csv
 import bokeh
 
-test = 1 + 1
-print(f"Test value is {test}.")
+inputfile = input("Please input the path to your file.")
+with open inputfile as file:
+        
 
 '''
 Sources
