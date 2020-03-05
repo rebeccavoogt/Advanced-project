@@ -32,6 +32,16 @@ p.circle(myarray[:,0], myarray[:,3], size=5, color='orange', alpha=0.5)
 # show the results
 show(p)
 
+#Line Graph
+output_file("patch.html")
+
+y = figure(plot_width=400, plot_height=400)
+
+y.multi_line([myarray[:,0], myarray[:,0]], [myarray[:,4], myarray[:,5]],
+             color=["firebrick", "purple"], alpha=[0.5, 0.5], line_width=4)
+
+show(y)
+
 
 '''
 # Bar graph
