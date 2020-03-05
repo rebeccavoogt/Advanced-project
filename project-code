@@ -3,16 +3,49 @@ This is my file for the Advanced Project in the MScBMI Advanced Concepts in Comp
 It was created in PyCharm using Python 3.7 and version control was managed using GitHub.
 '''
 
+from bokeh.plotting import figure, output_file, show
 import matplotlib
-import csv
-import bokeh
+import matplotlib.pyplot as plt
+import numpy as np
+import pandas as pd
+from bokeh.models import ColumnDataSource
+from bokeh.palettes import Spectral6
+from bokeh.transform import factor_cmap
+from numpy import genfromtxt
 
 inputfile = input("Please input the path to your file.")
-with open(inputfile) as file:
+with open(inputfile) as csvfile:
     print("It worked!")
+    myarray = genfromtxt(inputfile, delimiter=',')
+    print(myarray)
+
+# Scatterplot
 
 
 
+
+
+'''
+# Bar graph
+output_file("bar_colormapped.html")
+
+fruits = ['Apples', 'Pears', 'Nectarines', 'Plums', 'Grapes', 'Strawberries']
+counts = [5, 3, 4, 2, 4, 6]
+
+source = ColumnDataSource(data=dict(fruits=fruits, counts=counts))
+
+p = figure(x_range=fruits, plot_height=350, toolbar_location=None, title="Fruit Counts")
+p.vbar(x='fruits', top='counts', width=0.9, source=source, legend_field="fruits",
+       line_color='white', fill_color=factor_cmap('fruits', palette=Spectral6, factors=fruits))
+
+p.xgrid.grid_line_color = None
+p.y_range.start = 0
+p.y_range.end = 9
+p.legend.orientation = "horizontal"
+p.legend.location = "top_center"
+
+show(p)
+'''
 '''
 Sources
 https://www.google.com/search?q=delete+github+repository&rlz=1C1CHBF_enUS822US822&oq=delete+githu&aqs=chrome.0.0j69i57j0l6.2912j0j1&sourceid=chrome&ie=UTF-8
@@ -21,5 +54,12 @@ https://www.jetbrains.com/help/pycharm/commit-and-push-changes.html
 https://www.jetbrains.com/help/pycharm/set-up-a-git-repository.html
 https://git-scm.com/download/win
 https://www.jetbrains.com/help/pycharm/github.html
+https://docs.bokeh.org/en/latest/docs/gallery.html#gallery
+#https://docs.bokeh.org/en/latest/docs/user_guide/quickstart.html#userguide-quickstart
+https://docs.bokeh.org/en/latest/docs/user_guide/plotting.html
+https://docs.bokeh.org/en/latest/docs/gallery/bar_colormapped.html
+https://stackoverflow.com/questions/3518778/how-do-i-read-csv-data-into-a-record-array-in-numpy csv file to numpy array
+https://stackoverflow.com/questions/4455076/how-to-access-the-ith-column-of-a-numpy-multidimensional-array access columns in numpy
+
 
 '''
