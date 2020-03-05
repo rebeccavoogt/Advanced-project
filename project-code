@@ -8,8 +8,10 @@ import csv
 import bokeh
 
 inputfile = input("Please input the path to your file.")
-with open inputfile as file:
-        
+with open(inputfile) as file:
+    print("It worked!")
+
+
 
 '''
 Sources
