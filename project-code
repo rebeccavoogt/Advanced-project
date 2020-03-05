@@ -27,7 +27,7 @@ p = figure(plot_width=400, plot_height=400)
 # add a circle renderer with a size, color, and alpha
 p.circle(myarray[:,0], myarray[:,1], size=10, color="navy", alpha=0.5)
 p.circle(myarray[:,0], myarray[:,2], size=20, color='purple', alpha=0.5)
-p.circle(myarray[:,0], myarray[:,3], size=15, color='orange', alpha=0.5)
+p.circle(myarray[:,0], myarray[:,3], size=5, color='orange', alpha=0.5)
 
 # show the results
 show(p)
