@@ -17,12 +17,20 @@ inputfile = input("Please input the path to your file.")
 with open(inputfile) as csvfile:
     print("It worked!")
     myarray = genfromtxt(inputfile, delimiter=',')
-    print(myarray)
 
 # Scatterplot
+# output to static HTML file
+output_file("scatter.html")
 
+p = figure(plot_width=400, plot_height=400)
 
+# add a circle renderer with a size, color, and alpha
+p.circle(myarray[:,0], myarray[:,1], size=10, color="navy", alpha=0.5)
+p.circle(myarray[:,0], myarray[:,2], size=20, color='purple', alpha=0.5)
+p.circle(myarray[:,0], myarray[:,3], size=15, color='orange', alpha=0.5)
 
+# show the results
+show(p)
 
 
 '''
@@ -56,7 +64,7 @@ https://git-scm.com/download/win
 https://www.jetbrains.com/help/pycharm/github.html
 https://docs.bokeh.org/en/latest/docs/gallery.html#gallery
 #https://docs.bokeh.org/en/latest/docs/user_guide/quickstart.html#userguide-quickstart
-https://docs.bokeh.org/en/latest/docs/user_guide/plotting.html
+https://docs.bokeh.org/en/latest/docs/user_guide/plotting.html scatterplot and basic plotting tools
 https://docs.bokeh.org/en/latest/docs/gallery/bar_colormapped.html
 https://stackoverflow.com/questions/3518778/how-do-i-read-csv-data-into-a-record-array-in-numpy csv file to numpy array
 https://stackoverflow.com/questions/4455076/how-to-access-the-ith-column-of-a-numpy-multidimensional-array access columns in numpy
