@@ -16,6 +16,7 @@ from numpy import genfromtxt
 inputfile = input("Please input the path to your file.")
 with open(inputfile) as csvfile:
     print("It worked!")
+    print("Graphs should appear in your browser.")
     myarray = genfromtxt(inputfile, delimiter=',')
 
 # Scatterplot
@@ -75,7 +76,7 @@ https://www.jetbrains.com/help/pycharm/github.html
 https://docs.bokeh.org/en/latest/docs/gallery.html#gallery
 #https://docs.bokeh.org/en/latest/docs/user_guide/quickstart.html#userguide-quickstart
 https://docs.bokeh.org/en/latest/docs/user_guide/plotting.html scatterplot and basic plotting tools
-https://docs.bokeh.org/en/latest/docs/gallery/bar_colormapped.html
+https://docs.bokeh.org/en/latest/docs/gallery/bar_colormapped.html rainbow bar chart code
 https://stackoverflow.com/questions/3518778/how-do-i-read-csv-data-into-a-record-array-in-numpy csv file to numpy array
 https://stackoverflow.com/questions/4455076/how-to-access-the-ith-column-of-a-numpy-multidimensional-array access columns in numpy
 
