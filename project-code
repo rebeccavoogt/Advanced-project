@@ -3,7 +3,7 @@ This is my file for the Advanced Project in the MScBMI Advanced Concepts in Comp
 It was created in PyCharm using Python 3.7 and version control was managed using GitHub.
 '''
 
-from bokeh.models import LinearAxis, Range1d
+from bokeh.models import LinearAxis, Range1d, ColumnDataSource
 from bokeh.plotting import output_file, figure, show
 from numpy import genfromtxt
 from numpy.core._multiarray_umath import ndarray
@@ -55,6 +55,49 @@ y.multi_line([myarray[:,0], myarray[:,0]], [myarray[:,1], myarray[:,6]],
 y.add_layout(LinearAxis(y_range_name="foo"), 'left')
 y.add_layout(LinearAxis(y_range_name="foo2"), 'left')
 show(y)
+
+
+# Stacked bar graph
+output_file("hbar_stack.html")
+
+r = figure(plot_width=400, plot_height=400)
+a = list()
+b = list()
+c1 = list()
+d = list()
+e= list()
+f= list()
+g=list()
+
+for item in myarray[:,0]:
+    a.append(item)
+for item in myarray[:,1]:
+    b.append(item)
+for item in myarray[:,2]:
+    c1.append(item)
+for item in myarray[:,3]:
+    d.append(item)
+for item in myarray[:,4]:
+    e.append(item)
+for item in myarray[:,5]:
+    f.append(item)
+for item in myarray[:,6]:
+    g.append(item)
+
+source = ColumnDataSource(data=dict(
+    y=a,
+    x1 = b,
+    x2=c1,
+    x3=d,
+    x4=e,
+    x5=f,
+    x6=g
+))
+
+r.hbar_stack(['x1','x2','x3','x4','x5','x6'], y='y', height=0.8, color=("navy", "purple", "orange", "firebrick", "lime", "aqua"), source=source)
+
+show(r)
+
 '''
 Sources
 https://www.google.com/search?q=delete+github+repository&rlz=1C1CHBF_enUS822US822&oq=delete+githu&aqs=chrome.0.0j69i57j0l6.2912j0j1&sourceid=chrome&ie=UTF-8
@@ -65,7 +108,10 @@ https://git-scm.com/download/win
 https://www.jetbrains.com/help/pycharm/github.html
 https://docs.bokeh.org/en/latest/docs/gallery.html#gallery
 https://docs.bokeh.org/en/latest/docs/user_guide/quickstart.html#userguide-quickstart
-https://docs.bokeh.org/en/latest/docs/user_guide/plotting.html scatterplot and basic plotting tools, twin axes
+https://docs.bokeh.org/en/latest/docs/user_guide/plotting.html scatterplot and basic plotting tools, twin axes, stacked bar graph
 https://stackoverflow.com/questions/3518778/how-do-i-read-csv-data-into-a-record-array-in-numpy csv file to numpy array
 https://stackoverflow.com/questions/4455076/how-to-access-the-ith-column-of-a-numpy-multidimensional-array access columns in numpy
+https://stackoverflow.com/questions/16862459/numpy-float64-object-is-not-iterable numpy elements are not iterable help
+https://stackoverflow.com/questions/24643385/numpy-float64-object-is-not-iterable-but-im-not-trying-to numpy elements are not iterable help
+
 '''
