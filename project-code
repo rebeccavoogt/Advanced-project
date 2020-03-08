@@ -3,18 +3,20 @@ This is my file for the Advanced Project in the MScBMI Advanced Concepts in Comp
 It was created in PyCharm using Python 3.7 and version control was managed using GitHub.
 '''
 
-from bokeh.plotting import figure, output_file, show
-import matplotlib
-import matplotlib.pyplot as plt
-import numpy as np
-import pandas as pd
+from bokeh.models import LinearAxis, Range1d
+from bokeh.plotting import output_file, figure, show
 from numpy import genfromtxt
+from numpy.core._multiarray_umath import ndarray
 
 inputfile = input("Please input the path to your csv file.")
-with open(inputfile) as csvfile:
-    print("It worked!")
-    print("Graphs should appear in your browser.")
-    myarray = genfromtxt(inputfile, delimiter=',')
+try:
+    with open(inputfile) as csvfile:
+        print("It worked!")
+        print("Graphs should appear in your browser.")
+        myarray: ndarray = genfromtxt(inputfile, delimiter=',')
+except:
+    FileNotFoundError
+    print("The path you entered is not valid. Please click run again and retype the path.")
 
 # Scatterplot
 # output to static HTML file
@@ -22,24 +24,36 @@ output_file("scatter.html")
 
 p = figure(plot_width=400, plot_height=400)
 
-# add a circle renderer with a size, color, and alpha
-p.circle(myarray[:,0], myarray[:,1], size=10, color="navy", alpha=0.5)
-p.circle(myarray[:,0], myarray[:,2], size=20, color='purple', alpha=0.5)
-p.circle(myarray[:,0], myarray[:,3], size=5, color='orange', alpha=0.5)
-p.circle(myarray[:,0], myarray[:,4], size=10, color="firebrick", alpha=0.5)
-p.circle(myarray[:,0], myarray[:,5], size=20, color='lime', alpha=0.5)
-p.circle(myarray[:,0], myarray[:,6], size=5, color='aqua', alpha=0.5)
+# add a circle renderer with a size, color, and y axis
+p.circle(myarray[:,0], myarray[:,1], size=5, color="navy", y_range_name="foo")
+p.circle(myarray[:,0], myarray[:,2], size=5, color='purple')
+p.circle(myarray[:,0], myarray[:,3], size=5, color='orange', y_range_name="foo2")
+p.circle(myarray[:,0], myarray[:,4], size=5, color="firebrick", y_range_name="foo2")
+p.circle(myarray[:,0], myarray[:,5], size=5, color='lime', y_range_name="foo2")
+p.circle(myarray[:,0], myarray[:,6], size=5, color='aqua', y_range_name="foo")
+
+# add extra axes so all the data fits on one graph nicely
+p.extra_y_ranges = {"foo": Range1d(start=0, end=50), "foo2": Range1d(start=0, end=10)}
+p.add_layout(LinearAxis(y_range_name="foo"), 'left')
+p.add_layout(LinearAxis(y_range_name="foo2"), 'left')
+
 # show the results
 show(p)
 
-#Line Graph
+# Line Graph
 output_file("patch.html")
 
 y = figure(plot_width=400, plot_height=400)
+y.extra_y_ranges = {"foo": Range1d(start=0, end=50), "foo2": Range1d(start=0, end=10), "foo3": Range1d(start=0,end=650)}
+y.multi_line([myarray[:, 0]], [myarray[:, 2]],
+             color=["purple"], line_width=3)
+y.multi_line([myarray[:,0], myarray[:,0], myarray[:,0]], [myarray[:,3], myarray[:,4], myarray[:,5]],
+             color=["orange", "firebrick", "lime"], line_width=3, y_range_name="foo2")
+y.multi_line([myarray[:,0], myarray[:,0]], [myarray[:,1], myarray[:,6]],
+            color=["navy", "aqua"], line_width=3, y_range_name="foo")
 
-y.multi_line([myarray[:,0], myarray[:,0]], [myarray[:,4], myarray[:,5]],
-             color=["firebrick", "purple"], alpha=[0.5, 0.5], line_width=4)
-
+y.add_layout(LinearAxis(y_range_name="foo"), 'left')
+y.add_layout(LinearAxis(y_range_name="foo2"), 'left')
 show(y)
 '''
 Sources
