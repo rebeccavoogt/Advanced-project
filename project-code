@@ -8,12 +8,9 @@ import matplotlib
 import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
-from bokeh.models import ColumnDataSource
-from bokeh.palettes import Spectral6
-from bokeh.transform import factor_cmap
 from numpy import genfromtxt
 
-inputfile = input("Please input the path to your file.")
+inputfile = input("Please input the path to your csv file.")
 with open(inputfile) as csvfile:
     print("It worked!")
     print("Graphs should appear in your browser.")
@@ -29,7 +26,9 @@ p = figure(plot_width=400, plot_height=400)
 p.circle(myarray[:,0], myarray[:,1], size=10, color="navy", alpha=0.5)
 p.circle(myarray[:,0], myarray[:,2], size=20, color='purple', alpha=0.5)
 p.circle(myarray[:,0], myarray[:,3], size=5, color='orange', alpha=0.5)
-
+p.circle(myarray[:,0], myarray[:,4], size=10, color="firebrick", alpha=0.5)
+p.circle(myarray[:,0], myarray[:,5], size=20, color='lime', alpha=0.5)
+p.circle(myarray[:,0], myarray[:,6], size=5, color='aqua', alpha=0.5)
 # show the results
 show(p)
 
@@ -42,29 +41,6 @@ y.multi_line([myarray[:,0], myarray[:,0]], [myarray[:,4], myarray[:,5]],
              color=["firebrick", "purple"], alpha=[0.5, 0.5], line_width=4)
 
 show(y)
-
-
-'''
-# Bar graph
-output_file("bar_colormapped.html")
-
-fruits = ['Apples', 'Pears', 'Nectarines', 'Plums', 'Grapes', 'Strawberries']
-counts = [5, 3, 4, 2, 4, 6]
-
-source = ColumnDataSource(data=dict(fruits=fruits, counts=counts))
-
-p = figure(x_range=fruits, plot_height=350, toolbar_location=None, title="Fruit Counts")
-p.vbar(x='fruits', top='counts', width=0.9, source=source, legend_field="fruits",
-       line_color='white', fill_color=factor_cmap('fruits', palette=Spectral6, factors=fruits))
-
-p.xgrid.grid_line_color = None
-p.y_range.start = 0
-p.y_range.end = 9
-p.legend.orientation = "horizontal"
-p.legend.location = "top_center"
-
-show(p)
-'''
 '''
 Sources
 https://www.google.com/search?q=delete+github+repository&rlz=1C1CHBF_enUS822US822&oq=delete+githu&aqs=chrome.0.0j69i57j0l6.2912j0j1&sourceid=chrome&ie=UTF-8
@@ -74,11 +50,8 @@ https://www.jetbrains.com/help/pycharm/set-up-a-git-repository.html
 https://git-scm.com/download/win
 https://www.jetbrains.com/help/pycharm/github.html
 https://docs.bokeh.org/en/latest/docs/gallery.html#gallery
-#https://docs.bokeh.org/en/latest/docs/user_guide/quickstart.html#userguide-quickstart
-https://docs.bokeh.org/en/latest/docs/user_guide/plotting.html scatterplot and basic plotting tools
-https://docs.bokeh.org/en/latest/docs/gallery/bar_colormapped.html rainbow bar chart code
+https://docs.bokeh.org/en/latest/docs/user_guide/quickstart.html#userguide-quickstart
+https://docs.bokeh.org/en/latest/docs/user_guide/plotting.html scatterplot and basic plotting tools, twin axes
 https://stackoverflow.com/questions/3518778/how-do-i-read-csv-data-into-a-record-array-in-numpy csv file to numpy array
 https://stackoverflow.com/questions/4455076/how-to-access-the-ith-column-of-a-numpy-multidimensional-array access columns in numpy
-
-
 '''
