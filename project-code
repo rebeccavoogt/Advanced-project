@@ -22,7 +22,7 @@ except:
 # output to static HTML file
 output_file("scatter.html")
 
-p = figure(plot_width=400, plot_height=400)
+p = figure(plot_width=400, plot_height=400, title = "Your data plotted on a scatterplot")
 
 # add a circle renderer with a size, color, and y axis
 p.circle(myarray[:,0], myarray[:,1], size=5, color="navy", y_range_name="foo")
@@ -43,7 +43,7 @@ show(p)
 # Line Graph
 output_file("patch.html")
 
-y = figure(plot_width=400, plot_height=400)
+y = figure(plot_width=400, plot_height=400, title = "Your data plotted on a line graph")
 y.extra_y_ranges = {"foo": Range1d(start=0, end=50), "foo2": Range1d(start=0, end=10), "foo3": Range1d(start=0,end=650)}
 y.multi_line([myarray[:, 0]], [myarray[:, 2]],
              color=["purple"], line_width=3)
@@ -60,7 +60,7 @@ show(y)
 # Stacked bar graph
 output_file("hbar_stack.html")
 
-r = figure(plot_width=400, plot_height=400)
+r = figure(plot_width=400, plot_height=400, title = "Your data plotted in a horizontal stacked bar graph")
 a = list()
 b = list()
 c1 = list()
@@ -113,5 +113,5 @@ https://stackoverflow.com/questions/3518778/how-do-i-read-csv-data-into-a-record
 https://stackoverflow.com/questions/4455076/how-to-access-the-ith-column-of-a-numpy-multidimensional-array access columns in numpy
 https://stackoverflow.com/questions/16862459/numpy-float64-object-is-not-iterable numpy elements are not iterable help
 https://stackoverflow.com/questions/24643385/numpy-float64-object-is-not-iterable-but-im-not-trying-to numpy elements are not iterable help
-
+https://docs.bokeh.org/en/latest/docs/user_guide/styling.html how to add a title to a graph
 '''
