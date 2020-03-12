@@ -1,5 +1,5 @@
 # Advanced-project
-Final project for Advanced Concepts in Computer Coding 2020
+Final project for Advanced Concepts in Computer Programming 2020
 
 1. This project asks for the user to input the full path to a csv file, which it will then use columns of data to make a variety of graphs using bokeh. The bokeh plots pop up in the user's browser window.
 2. I selected this project because I wanted to explore an IDE and chose PyCharm, start a GitHub account and begin to learn how to use it, and to implement a data visualization for which I chose bokeh. I was able to achieve these objectives.
