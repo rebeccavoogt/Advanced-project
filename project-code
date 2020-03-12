@@ -100,14 +100,14 @@ show(r)
 
 '''
 Sources
-https://www.google.com/search?q=delete+github+repository&rlz=1C1CHBF_enUS822US822&oq=delete+githu&aqs=chrome.0.0j69i57j0l6.2912j0j1&sourceid=chrome&ie=UTF-8
-https://www.google.com/search?q=markdown+language&rlz=1C1CHBF_enUS822US822&oq=markdown+langu&aqs=chrome.0.0j69i57j0l6.2144j0j1&sourceid=chrome&ie=UTF-8
-https://www.jetbrains.com/help/pycharm/commit-and-push-changes.html
-https://www.jetbrains.com/help/pycharm/set-up-a-git-repository.html
-https://git-scm.com/download/win
-https://www.jetbrains.com/help/pycharm/github.html
-https://docs.bokeh.org/en/latest/docs/gallery.html#gallery
-https://docs.bokeh.org/en/latest/docs/user_guide/quickstart.html#userguide-quickstart
+https://www.google.com/search?q=delete+github+repository&rlz=1C1CHBF_enUS822US822&oq=delete+githu&aqs=chrome.0.0j69i57j0l6.2912j0j1&sourceid=chrome&ie=UTF-8 deleting a Github repository
+https://www.google.com/search?q=markdown+language&rlz=1C1CHBF_enUS822US822&oq=markdown+langu&aqs=chrome.0.0j69i57j0l6.2144j0j1&sourceid=chrome&ie=UTF-8 what markdown is
+https://www.jetbrains.com/help/pycharm/commit-and-push-changes.html how to commit and push changes in PyCharm
+https://www.jetbrains.com/help/pycharm/set-up-a-git-repository.html how to set up a Git repository in PyCharm
+https://git-scm.com/download/win link to download Git
+https://www.jetbrains.com/help/pycharm/github.html how to link GitHub with PyCharm
+https://docs.bokeh.org/en/latest/docs/gallery.html#gallery examples of bokeh graphs
+https://docs.bokeh.org/en/latest/docs/user_guide/quickstart.html#userguide-quickstart Quickstart guide to bokeh
 https://docs.bokeh.org/en/latest/docs/user_guide/plotting.html scatterplot and basic plotting tools, twin axes, stacked bar graph
 https://stackoverflow.com/questions/3518778/how-do-i-read-csv-data-into-a-record-array-in-numpy csv file to numpy array
 https://stackoverflow.com/questions/4455076/how-to-access-the-ith-column-of-a-numpy-multidimensional-array access columns in numpy
